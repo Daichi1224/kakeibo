@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title><%= content_for(:title) || "Kakeibo" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="<%= root_path %>" class="logo">Kakeibo</a>
+        <div class="nav-links">
+          <a href="<%= root_path %>">Dashboard</a>
+          <a href="<%= expenses_path %>">Expenses</a>
+          <a href="<%= reports_path %>">Reports</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <%= yield %>
+    </main>
+  </body>
+</html>

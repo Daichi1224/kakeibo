@@ -1,0 +1,10 @@
+<%
+  current_date = Date.new(@year, @month, 1)
+  prev_date = current_date.prev_month
+  next_date = current_date.next_month
+%>
+<div class="month-selector">
+  <a href="<%= url_for(year: prev_date.year, month: prev_date.month) %>">&#8592; prev</a>
+  <span class="current"><%= @year %>年<%= @month %>月</span>
+  <a href="<%= url_for(year: next_date.year, month: next_date.month) %>">next &#8594;</a>
+</div>

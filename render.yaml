@@ -1,0 +1,28 @@
+databases:
+  - name: kakeibo-db
+    plan: free
+    databaseName: kakeibo
+    user: kakeibo
+
+services:
+  - type: web
+    plan: free
+    name: kakeibo
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: kakeibo-db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: LINE_CHANNEL_SECRET
+        sync: false
+      - key: LINE_CHANNEL_TOKEN
+        sync: false
+      - key: DASHBOARD_USER
+        sync: false
+      - key: DASHBOARD_PASSWORD
+        sync: false

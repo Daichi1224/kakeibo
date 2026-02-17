@@ -1,0 +1,24 @@
+<h3 class="section-title">Monthly Reports</h3>
+<div class="card">
+  <table>
+    <thead>
+      <tr>
+        <th>Period</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reports.each do |report| %>
+        <tr>
+          <td><%= report.year %>年<%= report.month %>月</td>
+          <td><%= number_to_currency(report.total_amount, unit: "¥", precision: 0) %></td>
+          <td><a href="<%= report_detail_path(report) %>">View</a></td>
+        </tr>
+      <% end %>
+      <% if @reports.empty? %>
+        <tr><td colspan="3" style="text-align:center; color: var(--text-muted);">No reports yet</td></tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

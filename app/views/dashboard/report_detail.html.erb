@@ -1,0 +1,13 @@
+<h3 class="section-title"><%= @report.year %>年<%= @report.month %>月 Report</h3>
+
+<div class="card">
+  <h2>Total: <%= number_to_currency(@report.total_amount, unit: "¥", precision: 0) %></h2>
+</div>
+
+<div class="card">
+  <div class="report-text"><%= @report.report_text %></div>
+</div>
+
+<p style="margin-top: 16px;">
+  <a href="<%= reports_path %>">&#8592; Back to reports</a>
+</p>
