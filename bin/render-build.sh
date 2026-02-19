@@ -9,6 +9,6 @@ echo "=== Step 2: assets:precompile ==="
 SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
 
 echo "=== Step 3: assets:clean ==="
-bundle exec rake assets:clean
+SECRET_KEY_BASE=dummy bundle exec rake assets:clean
 
 echo "=== Build complete ==="
