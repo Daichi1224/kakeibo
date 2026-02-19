@@ -10,6 +10,7 @@ services:
     name: kakeibo
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
+    preDeployCommand: "bundle exec rake db:migrate"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
