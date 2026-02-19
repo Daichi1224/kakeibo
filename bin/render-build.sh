@@ -6,7 +6,7 @@ bundle config set --local without 'development test'
 bundle install --full-index
 
 echo "=== Step 2: assets:precompile ==="
-bundle exec rake assets:precompile
+SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
 
 echo "=== Step 3: assets:clean ==="
 bundle exec rake assets:clean
