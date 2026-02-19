@@ -305,7 +305,7 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.7.4)
+    zeitwerk (2.7.5)
 
 PLATFORMS
   aarch64-linux
@@ -329,6 +329,8 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   line-bot-api
+  net-pop (>= 0.1.2)
+  net-protocol
   pg
   puma (>= 5.0)
   rails (~> 7.2.3)
