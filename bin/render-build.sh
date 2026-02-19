@@ -3,7 +3,7 @@ set -o errexit
 
 echo "=== Step 1: bundle install ==="
 bundle config set --local without 'development test'
-bundle install
+bundle install --full-index
 
 echo "=== Step 2: assets:precompile ==="
 bundle exec rake assets:precompile
