@@ -18,6 +18,8 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
+      - key: SECRET_KEY_BASE
+        generateValue: true
       - key: LINE_CHANNEL_SECRET
         sync: false
       - key: LINE_CHANNEL_TOKEN
